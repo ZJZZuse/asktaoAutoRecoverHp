@@ -1,8 +1,13 @@
 ﻿Public Class MyDm
 
+
     Public Delegate Function findHwnd(ByVal dm)
 
     Public Delegate Sub bindAction(ByVal dm, ByVal hwnd, ByVal hwnds)
+
+    Public Delegate Function gainDoneSign(ByVal dm)
+
+
 
     Property dm As Dm.dmsoft
 
@@ -89,7 +94,7 @@
 
     End Sub
 
-    Sub delay(ByVal ms)
+    Shared Sub delay(ByVal ms)
 
         Threading.Thread.Sleep(ms)
 
@@ -103,5 +108,20 @@
     End Sub
 
 
+    'wait function
+    Sub waitUntil(ByVal gainDoneSign As gainDoneSign)
+
+
+        Do While True
+
+            If gainDoneSign(dm) Then
+
+                Exit Do
+
+            End If
+
+        Loop
+
+    End Sub
 
 End Class

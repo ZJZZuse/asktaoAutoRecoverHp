@@ -1,11 +1,13 @@
 ﻿Public Class MyAskTaoHelper
 
-    Private dm
+    Protected dm As Dm.dmsoft
 
-    Private myDm As New MyDm
+    Protected myDm As MyDm
 
 
-    Sub New()
+    Sub New(ByVal myDm)
+
+        Me.myDm = myDm
 
         Me.dm = myDm.dm
 
@@ -24,6 +26,30 @@
 
     End Function
 
+    Sub toggleAtkTaoFunctionCommon(ByVal c)
+
+        dm.KeyDownChar("alt")
+
+        myDm.delay(100)
+
+        dm.KeyPressChar("c")
+
+        dm.KeyUpChar("alt")
+
+    End Sub
+
+    Sub toggleRoleView()
+
+        toggleAtkTaoFunctionCommon("c")
+
+    End Sub
+
+    Sub togglePetView()
+
+        toggleAtkTaoFunctionCommon("r")
+
+
+    End Sub
 
     Sub recoverPetHp(ByVal ratio)
 
@@ -37,9 +63,7 @@
 
     End Sub
 
-
-
-    Private Sub recoverPetHp()
+    Sub recoverPetHp()
 
         myDm.initMousePosition()
 
