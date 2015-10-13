@@ -7,6 +7,8 @@
 
     Public Delegate Function gainDoneSign(ByVal dm)
 
+    Public Delegate Function gainObjByDmCommon(ByVal dm)
+
 
 
     Property dm As Dm.dmsoft
@@ -123,5 +125,6 @@
         Loop
 
     End Sub
+
 
 End Class

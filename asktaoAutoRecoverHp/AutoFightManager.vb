@@ -8,13 +8,15 @@
 
     Function isFightingState()
 
+        'words
+
         Return False
 
     End Function
 
     Function isAutoFightViewOpen()
 
-
+        'find for the dialog some certain text
 
         Return True
 
@@ -38,13 +40,21 @@
 
     End Sub
 
-    ''' 隔个10s运行一次即可
+
     Function isMoveForFighting()
+
+        'view the pos in the left up side, see wether the data is change
+
+
+        myDm.delay(500)
+
+
 
         Return False
 
     End Function
 
+    ''' 隔个10s运行一次即可
     Sub autoFightF()
 
         If isFightingState() Then
