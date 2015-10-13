@@ -1,0 +1,43 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+asktaoAutoRecoverHp
+</name>
+</assembly>
+<members>
+<member name="M:asktaoAutoRecoverHp.AutoFightManager.autoFightF">
+ 隔个10s运行一次即可
+
+</member><member name="P:asktaoAutoRecoverHp.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:asktaoAutoRecoverHp.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:asktaoAutoRecoverHp.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:asktaoAutoRecoverHp.MyAskTaoHelper.recoverPetRoleHMPAutoFacede(System.Object,System.Object,System.Object,System.Object)">
+	<summary>
+ that's take effect in unfighting condition.
+ is the main w for use
+ </summary>
+	<param name="rHpR"></param>
+	<param name="rMpR"></param>
+	<param name="pHpR"></param>
+	<param name="pMpR"></param>
+	<remarks></remarks>
+</member><member name="M:asktaoAutoRecoverHp.MyAskTaoHelper.gainPetMp">
+	<summary>
+ to do
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member>
+</members>
+</doc>

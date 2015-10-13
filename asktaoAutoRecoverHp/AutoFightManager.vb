@@ -6,21 +6,8 @@
         MyBase.New(myDm)
     End Sub
 
-    Function isFightingState()
 
-        'words
 
-        Return False
-
-    End Function
-
-    Function isAutoFightViewOpen()
-
-        'find for the dialog some certain text
-
-        Return True
-
-    End Function
 
     Sub toggleAutoFight()
 
