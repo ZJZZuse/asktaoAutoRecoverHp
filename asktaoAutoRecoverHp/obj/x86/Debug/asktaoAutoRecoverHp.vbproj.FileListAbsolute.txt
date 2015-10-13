@@ -1,0 +1,2 @@
+D:\myworkplaceTest\vb.net2010\asktaoAutoRecoverHp\asktaoAutoRecoverHp\obj\x86\Debug\Interop.Dm.dll
+D:\myworkplaceTest\vb.net2010\asktaoAutoRecoverHp\asktaoAutoRecoverHp\obj\x86\Debug\asktaoAutoRecoverHp.vbproj.ResolveComReference.cache
