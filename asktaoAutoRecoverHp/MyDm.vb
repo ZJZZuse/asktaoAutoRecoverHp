@@ -95,4 +95,13 @@
 
     End Sub
 
+
+    Protected Overrides Sub Finalize()
+
+        dm.UnBindWindow()
+
+    End Sub
+
+
+
 End Class
