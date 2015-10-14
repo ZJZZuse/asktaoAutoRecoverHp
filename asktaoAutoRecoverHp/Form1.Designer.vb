@@ -27,20 +27,18 @@ Partial Class Form1
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.HpMpUserControlPetHp = New asktaoAutoRecoverHp.HpMpUserControl()
-        Me.HpMpUserControlPetMp = New asktaoAutoRecoverHp.HpMpUserControl()
-        Me.HpMpUserControlRoleHp = New asktaoAutoRecoverHp.HpMpUserControl()
-        Me.HpMpUserControlRoleMp = New asktaoAutoRecoverHp.HpMpUserControl()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.CheckBoxEnableAllRecover = New System.Windows.Forms.CheckBox()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.NumericUpDownsmhp = New System.Windows.Forms.NumericUpDown()
+        Me.CheckBoxEnableSimpleHpMp = New System.Windows.Forms.CheckBox()
         Me.TimerAllRecover = New System.Windows.Forms.Timer(Me.components)
+        Me.TimersimpleHMp = New System.Windows.Forms.Timer(Me.components)
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.TimerAutoClickCBtn = New System.Windows.Forms.Timer(Me.components)
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
+        CType(Me.NumericUpDownsmhp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button1
@@ -63,7 +61,7 @@ Partial Class Form1
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
@@ -83,98 +81,76 @@ Partial Class Form1
         Me.TabPage1.Text = "TabPage1"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'TabPage2
+        'TabPage3
         '
-        Me.TabPage2.Controls.Add(Me.CheckBoxEnableAllRecover)
-        Me.TabPage2.Controls.Add(Me.GroupBox1)
-        Me.TabPage2.Controls.Add(Me.GroupBox2)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(584, 271)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Hp Mp"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        Me.TabPage3.Controls.Add(Me.CheckBox1)
+        Me.TabPage3.Controls.Add(Me.Label1)
+        Me.TabPage3.Controls.Add(Me.NumericUpDownsmhp)
+        Me.TabPage3.Controls.Add(Me.CheckBoxEnableSimpleHpMp)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(584, 271)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "simple hp mp"
+        Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'HpMpUserControlPetHp
+        'Label1
         '
-        Me.HpMpUserControlPetHp.Dock = System.Windows.Forms.DockStyle.Top
-        Me.HpMpUserControlPetHp.Location = New System.Drawing.Point(3, 17)
-        Me.HpMpUserControlPetHp.Name = "HpMpUserControlPetHp"
-        Me.HpMpUserControlPetHp.Size = New System.Drawing.Size(263, 73)
-        Me.HpMpUserControlPetHp.TabIndex = 0
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(240, 37)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(11, 12)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "s"
         '
-        'HpMpUserControlPetMp
+        'NumericUpDownsmhp
         '
-        Me.HpMpUserControlPetMp.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.HpMpUserControlPetMp.Location = New System.Drawing.Point(3, 115)
-        Me.HpMpUserControlPetMp.Name = "HpMpUserControlPetMp"
-        Me.HpMpUserControlPetMp.Size = New System.Drawing.Size(263, 73)
-        Me.HpMpUserControlPetMp.TabIndex = 1
+        Me.NumericUpDownsmhp.Location = New System.Drawing.Point(114, 28)
+        Me.NumericUpDownsmhp.Name = "NumericUpDownsmhp"
+        Me.NumericUpDownsmhp.Size = New System.Drawing.Size(120, 21)
+        Me.NumericUpDownsmhp.TabIndex = 1
         '
-        'HpMpUserControlRoleHp
+        'CheckBoxEnableSimpleHpMp
         '
-        Me.HpMpUserControlRoleHp.Dock = System.Windows.Forms.DockStyle.Top
-        Me.HpMpUserControlRoleHp.Location = New System.Drawing.Point(3, 17)
-        Me.HpMpUserControlRoleHp.Name = "HpMpUserControlRoleHp"
-        Me.HpMpUserControlRoleHp.Size = New System.Drawing.Size(263, 73)
-        Me.HpMpUserControlRoleHp.TabIndex = 2
+        Me.CheckBoxEnableSimpleHpMp.AutoSize = True
+        Me.CheckBoxEnableSimpleHpMp.Location = New System.Drawing.Point(30, 33)
+        Me.CheckBoxEnableSimpleHpMp.Name = "CheckBoxEnableSimpleHpMp"
+        Me.CheckBoxEnableSimpleHpMp.Size = New System.Drawing.Size(54, 16)
+        Me.CheckBoxEnableSimpleHpMp.TabIndex = 0
+        Me.CheckBoxEnableSimpleHpMp.Text = "hp mp"
+        Me.CheckBoxEnableSimpleHpMp.UseVisualStyleBackColor = True
         '
-        'HpMpUserControlRoleMp
+        'TimersimpleHMp
         '
-        Me.HpMpUserControlRoleMp.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.HpMpUserControlRoleMp.Location = New System.Drawing.Point(3, 113)
-        Me.HpMpUserControlRoleMp.Name = "HpMpUserControlRoleMp"
-        Me.HpMpUserControlRoleMp.Size = New System.Drawing.Size(263, 73)
-        Me.HpMpUserControlRoleMp.TabIndex = 3
         '
-        'GroupBox1
+        'CheckBox1
         '
-        Me.GroupBox1.Controls.Add(Me.HpMpUserControlPetHp)
-        Me.GroupBox1.Controls.Add(Me.HpMpUserControlPetMp)
-        Me.GroupBox1.Location = New System.Drawing.Point(8, 6)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(269, 191)
-        Me.GroupBox1.TabIndex = 4
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "pet"
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(30, 73)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(162, 16)
+        Me.CheckBox1.TabIndex = 3
+        Me.CheckBox1.Text = "auto click continue btn"
+        Me.CheckBox1.UseVisualStyleBackColor = True
         '
-        'GroupBox2
+        'TimerAutoClickCBtn
         '
-        Me.GroupBox2.Controls.Add(Me.HpMpUserControlRoleMp)
-        Me.GroupBox2.Controls.Add(Me.HpMpUserControlRoleHp)
-        Me.GroupBox2.Location = New System.Drawing.Point(309, 8)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(269, 189)
-        Me.GroupBox2.TabIndex = 5
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "role"
-        '
-        'CheckBoxEnableAllRecover
-        '
-        Me.CheckBoxEnableAllRecover.AutoSize = True
-        Me.CheckBoxEnableAllRecover.Location = New System.Drawing.Point(491, 249)
-        Me.CheckBoxEnableAllRecover.Name = "CheckBoxEnableAllRecover"
-        Me.CheckBoxEnableAllRecover.Size = New System.Drawing.Size(84, 16)
-        Me.CheckBoxEnableAllRecover.TabIndex = 6
-        Me.CheckBoxEnableAllRecover.Text = "enable all"
-        Me.CheckBoxEnableAllRecover.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(592, 418)
+        Me.ClientSize = New System.Drawing.Size(592, 396)
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox2.ResumeLayout(False)
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
+        CType(Me.NumericUpDownsmhp, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -182,14 +158,13 @@ Partial Class Form1
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
-    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents HpMpUserControlPetHp As asktaoAutoRecoverHp.HpMpUserControl
-    Friend WithEvents HpMpUserControlPetMp As asktaoAutoRecoverHp.HpMpUserControl
-    Friend WithEvents HpMpUserControlRoleMp As asktaoAutoRecoverHp.HpMpUserControl
-    Friend WithEvents HpMpUserControlRoleHp As asktaoAutoRecoverHp.HpMpUserControl
-    Friend WithEvents CheckBoxEnableAllRecover As System.Windows.Forms.CheckBox
-    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents TimerAllRecover As System.Windows.Forms.Timer
+    Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents NumericUpDownsmhp As System.Windows.Forms.NumericUpDown
+    Friend WithEvents CheckBoxEnableSimpleHpMp As System.Windows.Forms.CheckBox
+    Friend WithEvents TimersimpleHMp As System.Windows.Forms.Timer
+    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents TimerAutoClickCBtn As System.Windows.Forms.Timer
 
 End Class

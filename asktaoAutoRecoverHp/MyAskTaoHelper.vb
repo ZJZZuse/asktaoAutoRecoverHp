@@ -31,6 +31,18 @@
 
     End Sub
 
+    ''' <summary>
+    ''' more common in daily use
+    ''' </summary>
+    ''' <remarks></remarks>
+    Sub recoverPetRoleHMPAnyWFacede()
+
+        recoverPetHpAndMp()
+        recoverRoleHpAndMp()
+
+
+    End Sub
+
     Function gainPetHp()
 
         ' Dim s = dm.Ocr(136, 354, 246, 373, "f8fcf8-000000", 1.0)
@@ -148,7 +160,7 @@
 
         If mps(0) / CDbl(mps(1)) < ratio Then
 
-            recoverRoleHp()
+            recoverRoleHpAndMp()
 
         End If
 
@@ -167,7 +179,7 @@
 
         If hps(0) / CDbl(hps(1)) < ratio Then
 
-            recoverRoleHp()
+            recoverRoleHpAndMp()
 
         End If
 
@@ -186,7 +198,7 @@
 
         If mps(0) / CDbl(mps(1)) < ratio Then
 
-            recoverPetHp()
+            recoverPetHpAndMp()
 
         End If
 
@@ -205,13 +217,13 @@
 
         If hps(0) / CDbl(hps(1)) < ratio Then
 
-            recoverPetHp()
+            recoverPetHpAndMp()
 
         End If
 
     End Sub
 
-    Sub recoverPetHp()
+    Sub recoverPetHpAndMp()
 
         myDm.initMousePosition()
 
@@ -224,7 +236,7 @@
 
     End Sub
 
-    Private Sub recoverRoleHp()
+    Private Sub recoverRoleHpAndMp()
         Throw New NotImplementedException
     End Sub
 

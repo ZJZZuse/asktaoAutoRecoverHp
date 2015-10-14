@@ -19,29 +19,27 @@
 
         ' 在 InitializeComponent() 调用之后添加任何初始化。
 
-        HpMpUserControlPetHp.Label1.Text = My.Resources.hpString
-        HpMpUserControlPetMp.Label1.Text = My.Resources.mpString
-        HpMpUserControlRoleHp.Label1.Text = My.Resources.hpString
-        HpMpUserControlRoleHp.Label1.Text = My.Resources.mpString
+
+
 
 
     End Sub
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
-        Dim hwnd = dm.FindWindow("AskTao", "问道")
+        'Dim hwnd = dm.FindWindow("AskTao", "问道")
 
-        dm_ret = dm.BindWindow(hwnd, "dx2", "dx2", "dx", 0)
+        'dm_ret = dm.BindWindow(hwnd, "dx2", "dx2", "dx", 0)
 
-        'dm_ret = dm.GetClientSize(hwnd, zoneWidth, zoneHeight)
+        ''dm_ret = dm.GetClientSize(hwnd, zoneWidth, zoneHeight)
 
-        dm_ret = dm.SetPath(basePath)
+        'dm_ret = dm.SetPath(basePath)
 
-        dm_ret = dm.SetDict(0, "dm_soft.txt")
+        'dm_ret = dm.SetDict(0, "dm_soft.txt")
 
-        dm_ret = dm.CaptureJpg(0, 0, zoneWidth, zoneHeight, Now.Millisecond + "screen.jpg", 100)
+        'dm_ret = dm.CaptureJpg(0, 0, zoneWidth, zoneHeight, Now.Millisecond + "screen.jpg", 100)
 
-        'dm_ret = dm.CaptureJpg(0, 0, zoneWidth, zoneHeight, "1screen.jpg", 100)
+        ''dm_ret = dm.CaptureJpg(0, 0, zoneWidth, zoneHeight, "1screen.jpg", 100)
 
     End Sub
 
@@ -111,7 +109,42 @@
 
     End Sub
 
-    Private Sub GroupBox1_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GroupBox1.Enter
+    Private Sub GroupBox1_Enter(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
+
+    Private Sub HpMpUserControlRoleHp_Load(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    Private Sub NumericUpDownsmhp_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles NumericUpDownsmhp.LostFocus
+
+        TimersimpleHMp.Interval = sender.Value * 1000
+        TimerAutoClickCBtn.Interval = sender.Value * 1000
+
+    End Sub
+
+    Private Sub NumericUpDownsmhp_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NumericUpDownsmhp.ValueChanged
+
+    End Sub
+
+    Private Sub CheckBoxEnableSimpleHpMp_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBoxEnableSimpleHpMp.CheckedChanged
+
+        TimersimpleHMp.Enabled = CheckBoxEnableSimpleHpMp.Checked
+
+    End Sub
+
+    Private Sub TimersimpleHMp_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TimersimpleHMp.Tick
+
+    End Sub
+
+    Private Sub TimerAutoClickCBtn_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TimerAutoClickCBtn.Tick
+
+    End Sub
+
+
+    Private Sub CheckBox1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox1.CheckedChanged
+        TimerAutoClickCBtn.Enabled = sender.Checked
+    End Sub
+
 End Class

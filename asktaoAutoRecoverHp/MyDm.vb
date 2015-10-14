@@ -3,7 +3,7 @@
 
     Public Delegate Function findHwnd(ByVal dm)
 
-    Public Delegate Sub bindAction(ByVal dm, ByVal hwnd, ByVal hwnds)
+    Public Delegate Sub bindAction(ByVal dm, ByVal hwnd)
 
     Public Delegate Function gainDoneSign(ByVal dm)
 
@@ -19,27 +19,19 @@
 
     Property dictName = "dm_soft.txt"
 
-    Property hwnds
 
     Property hwnd
 
 
-    WriteOnly Property basePathAndDictName()
+    Sub initBaskPath()
 
+        basePath = dm.GetBasePath()
 
-        Set(ByVal ps)
-            basePath = ps(0)
-            dictName = ps(1)
-        End Set
-
-    End Property
-
+    End Sub
 
 
     Dim zoneWidth As Object = 800
     Dim zoneHeight As Object = 600
-
-
 
     Sub New()
 
@@ -53,6 +45,20 @@
 
     End Sub
 
+    ''' <summary>
+    ''' common one time builder
+    ''' </summary>
+    ''' <param name="dm"></param>
+    ''' <param name="hwnd"></param>
+    ''' <param name="bindAction"></param>
+    ''' <remarks></remarks>
+    Sub New(ByVal dm As Dm.dmsoft, ByVal hwnd As Int32, ByVal bindAction As bindAction)
+
+        Me.New(dm)
+
+        initDm(hwnd, bindAction)
+
+    End Sub
 
 
     Sub askTaoBindW()
@@ -62,28 +68,16 @@
     End Sub
 
 
-    Sub initDm(ByVal findHwnd As findHwnd, ByVal bindAction As bindAction)
 
+    Sub initDm(ByVal hwnd As Int32, ByVal bindAction As bindAction)
 
-        Dim backs = findHwnd.Invoke(dm)
+        Me.hwnd = hwnd
 
-        If backs(1) Then
-
-            hwnd = backs(0)
-
-        Else
-
-            hwnds = CStr(backs(0)).Split(",")
-
-        End If
-
-
-        bindAction.Invoke(dm, hwnd, hwnds)
+        bindAction.Invoke(dm, hwnd)
 
         dm_ret = dm.SetPath(basePath)
 
         dm_ret = dm.SetDict(0, dictName)
-
 
         dm_ret = dm.GetClientSize(hwnd, zoneWidth, zoneHeight)
 

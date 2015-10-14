@@ -19,7 +19,7 @@
 
         myDm.initMousePosition()
 
-        'moveto
+        'moveto,w in findpic? maybe
 
         myDm.delay(100)
 
