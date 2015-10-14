@@ -40,6 +40,8 @@ Partial Class Form1
         Me.TimerAllRecover = New System.Windows.Forms.Timer(Me.components)
         Me.TimersimpleHMp = New System.Windows.Forms.Timer(Me.components)
         Me.TimerAutoClickCBtn = New System.Windows.Forms.Timer(Me.components)
+        Me.LabelBindCount = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.TabControl1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
@@ -79,6 +81,8 @@ Partial Class Form1
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.Label2)
+        Me.TabPage2.Controls.Add(Me.LabelBindCount)
         Me.TabPage2.Controls.Add(Me.ButtonUnbind)
         Me.TabPage2.Controls.Add(Me.Button2)
         Me.TabPage2.Controls.Add(Me.ListBoxGoalWins)
@@ -195,6 +199,24 @@ Partial Class Form1
         'TimerAutoClickCBtn
         '
         '
+        'LabelBindCount
+        '
+        Me.LabelBindCount.AutoSize = True
+        Me.LabelBindCount.Location = New System.Drawing.Point(188, 57)
+        Me.LabelBindCount.Name = "LabelBindCount"
+        Me.LabelBindCount.Size = New System.Drawing.Size(89, 12)
+        Me.LabelBindCount.TabIndex = 3
+        Me.LabelBindCount.Text = "LabelBindCount"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(191, 29)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(71, 12)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "bind count:"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -205,6 +227,7 @@ Partial Class Form1
         Me.Text = "Form1"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         Me.Panel1.ResumeLayout(False)
@@ -232,5 +255,7 @@ Partial Class Form1
     Friend WithEvents ListBoxGoalWins As System.Windows.Forms.ListBox
     Friend WithEvents ButtonUnbind As System.Windows.Forms.Button
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents LabelBindCount As System.Windows.Forms.Label
 
 End Class

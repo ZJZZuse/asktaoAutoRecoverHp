@@ -1,8 +1,8 @@
 ﻿Public Class MyAskTaoHelper
 
-    Protected dm As Dm.dmsoft
+    Property dm As Dm.dmsoft
 
-    Protected myDm As MyDm
+    Property myDm As MyDm
 
 
     Sub New(ByVal myDm)

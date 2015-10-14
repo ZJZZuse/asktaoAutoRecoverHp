@@ -9,10 +9,7 @@
     Dim zoneWidth As Object = 800
     Dim zoneHeight As Object = 600
 
-    Private hpMpUserControls
-
-
-    Private autoFightManagers() As AutoFightManager
+    Private autoFightManagers As New Collection
 
     Private goalMap As New Hashtable
 
@@ -206,9 +203,13 @@
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
 
+
+
         Dim items = ListBoxGoalWins.SelectedItems
 
         Dim hwnds = New Collection
+
+        autoFightManagers.Clear()
 
         For Each item In items
 
@@ -218,5 +219,25 @@
 
         'todo bind and goalObj set
 
+        ' autoFightManagers.
+
+        LabelBindCount.Text = autoFightManagers.Count
+
     End Sub
+
+    Private Sub ButtonUnbind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonUnbind.Click
+
+        For Each item As AutoFightManager In autoFightManagers
+
+            item.myDm.unbind()
+
+        Next
+
+        autoFightManagers.Clear()
+
+        LabelBindCount.Text = autoFightManagers.Count
+
+    End Sub
+
+
 End Class
