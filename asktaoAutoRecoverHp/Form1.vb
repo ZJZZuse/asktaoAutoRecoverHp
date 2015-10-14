@@ -24,9 +24,9 @@
         ' 在 InitializeComponent() 调用之后添加任何初始化。
 
 
+        TabControl1.TabPages.RemoveAt(0)
 
-
-
+        Me.FormBorderStyle = FormBorderStyle.FixedSingle
     End Sub
 
 
@@ -193,7 +193,7 @@
 
     Private Sub ListBoxGoalWins_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles ListBoxGoalWins.GotFocus
 
-        findGoalWins()
+        'findGoalWins()
 
     End Sub
 
@@ -247,6 +247,10 @@
         t.ShowDialog()
 
 
+
+    End Sub
+
+    Private Sub TabPage1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TabPage1.Click
 
     End Sub
 End Class
