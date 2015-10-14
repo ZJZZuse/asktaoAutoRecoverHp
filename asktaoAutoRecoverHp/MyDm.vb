@@ -103,6 +103,11 @@
 
     End Sub
 
+    Sub unbind()
+
+        dm.UnBindWindow()
+
+    End Sub
 
     'wait function
     Sub waitUntil(ByVal gainDoneSign As gainDoneSign)

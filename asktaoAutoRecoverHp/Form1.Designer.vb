@@ -26,19 +26,26 @@ Partial Class Form1
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.ButtonUnbind = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.ListBoxGoalWins = New System.Windows.Forms.ListBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.NumericUpDownsmhp = New System.Windows.Forms.NumericUpDown()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.CheckBoxEnableSimpleHpMp = New System.Windows.Forms.CheckBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.NumericUpDownsmhp = New System.Windows.Forms.NumericUpDown()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TimerAllRecover = New System.Windows.Forms.Timer(Me.components)
         Me.TimersimpleHMp = New System.Windows.Forms.Timer(Me.components)
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.TimerAutoClickCBtn = New System.Windows.Forms.Timer(Me.components)
         Me.TabControl1.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         CType(Me.NumericUpDownsmhp, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button1
@@ -60,14 +67,115 @@ Partial Class Form1
         '
         'TabControl1
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(592, 297)
+        Me.TabControl1.Size = New System.Drawing.Size(290, 297)
         Me.TabControl1.TabIndex = 2
+        '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.ButtonUnbind)
+        Me.TabPage2.Controls.Add(Me.Button2)
+        Me.TabPage2.Controls.Add(Me.ListBoxGoalWins)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(282, 271)
+        Me.TabPage2.TabIndex = 3
+        Me.TabPage2.Text = "binding"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'ButtonUnbind
+        '
+        Me.ButtonUnbind.Location = New System.Drawing.Point(190, 240)
+        Me.ButtonUnbind.Name = "ButtonUnbind"
+        Me.ButtonUnbind.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonUnbind.TabIndex = 2
+        Me.ButtonUnbind.Text = "unbind"
+        Me.ButtonUnbind.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(190, 205)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 1
+        Me.Button2.Text = "bind"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'ListBoxGoalWins
+        '
+        Me.ListBoxGoalWins.FormattingEnabled = True
+        Me.ListBoxGoalWins.ItemHeight = 12
+        Me.ListBoxGoalWins.Items.AddRange(New Object() {"a", "a", "a", "a", "a"})
+        Me.ListBoxGoalWins.Location = New System.Drawing.Point(9, 7)
+        Me.ListBoxGoalWins.Name = "ListBoxGoalWins"
+        Me.ListBoxGoalWins.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
+        Me.ListBoxGoalWins.Size = New System.Drawing.Size(175, 256)
+        Me.ListBoxGoalWins.TabIndex = 0
+        '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.CheckBox1)
+        Me.TabPage3.Controls.Add(Me.CheckBoxEnableSimpleHpMp)
+        Me.TabPage3.Controls.Add(Me.Panel1)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(282, 271)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "simple hp mp"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(30, 102)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(162, 16)
+        Me.CheckBox1.TabIndex = 3
+        Me.CheckBox1.Text = "auto click continue btn"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'CheckBoxEnableSimpleHpMp
+        '
+        Me.CheckBoxEnableSimpleHpMp.AutoSize = True
+        Me.CheckBoxEnableSimpleHpMp.Location = New System.Drawing.Point(30, 71)
+        Me.CheckBoxEnableSimpleHpMp.Name = "CheckBoxEnableSimpleHpMp"
+        Me.CheckBoxEnableSimpleHpMp.Size = New System.Drawing.Size(54, 16)
+        Me.CheckBoxEnableSimpleHpMp.TabIndex = 0
+        Me.CheckBoxEnableSimpleHpMp.Text = "hp mp"
+        Me.CheckBoxEnableSimpleHpMp.UseVisualStyleBackColor = True
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.NumericUpDownsmhp)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Location = New System.Drawing.Point(30, 21)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(145, 29)
+        Me.Panel1.TabIndex = 4
+        '
+        'NumericUpDownsmhp
+        '
+        Me.NumericUpDownsmhp.Location = New System.Drawing.Point(3, 3)
+        Me.NumericUpDownsmhp.Name = "NumericUpDownsmhp"
+        Me.NumericUpDownsmhp.Size = New System.Drawing.Size(120, 21)
+        Me.NumericUpDownsmhp.TabIndex = 1
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(129, 12)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(11, 12)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "s"
         '
         'TabPage1
         '
@@ -76,63 +184,13 @@ Partial Class Form1
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(584, 271)
+        Me.TabPage1.Size = New System.Drawing.Size(282, 271)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "TabPage1"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'TabPage3
-        '
-        Me.TabPage3.Controls.Add(Me.CheckBox1)
-        Me.TabPage3.Controls.Add(Me.Label1)
-        Me.TabPage3.Controls.Add(Me.NumericUpDownsmhp)
-        Me.TabPage3.Controls.Add(Me.CheckBoxEnableSimpleHpMp)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(584, 271)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "simple hp mp"
-        Me.TabPage3.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(240, 37)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(11, 12)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "s"
-        '
-        'NumericUpDownsmhp
-        '
-        Me.NumericUpDownsmhp.Location = New System.Drawing.Point(114, 28)
-        Me.NumericUpDownsmhp.Name = "NumericUpDownsmhp"
-        Me.NumericUpDownsmhp.Size = New System.Drawing.Size(120, 21)
-        Me.NumericUpDownsmhp.TabIndex = 1
-        '
-        'CheckBoxEnableSimpleHpMp
-        '
-        Me.CheckBoxEnableSimpleHpMp.AutoSize = True
-        Me.CheckBoxEnableSimpleHpMp.Location = New System.Drawing.Point(30, 33)
-        Me.CheckBoxEnableSimpleHpMp.Name = "CheckBoxEnableSimpleHpMp"
-        Me.CheckBoxEnableSimpleHpMp.Size = New System.Drawing.Size(54, 16)
-        Me.CheckBoxEnableSimpleHpMp.TabIndex = 0
-        Me.CheckBoxEnableSimpleHpMp.Text = "hp mp"
-        Me.CheckBoxEnableSimpleHpMp.UseVisualStyleBackColor = True
-        '
         'TimersimpleHMp
         '
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(30, 73)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(162, 16)
-        Me.CheckBox1.TabIndex = 3
-        Me.CheckBox1.Text = "auto click continue btn"
-        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'TimerAutoClickCBtn
         '
@@ -141,16 +199,19 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(592, 396)
+        Me.ClientSize = New System.Drawing.Size(290, 332)
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.TabControl1.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
+        Me.TabPage2.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         CType(Me.NumericUpDownsmhp, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -166,5 +227,10 @@ Partial Class Form1
     Friend WithEvents TimersimpleHMp As System.Windows.Forms.Timer
     Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
     Friend WithEvents TimerAutoClickCBtn As System.Windows.Forms.Timer
+    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents ListBoxGoalWins As System.Windows.Forms.ListBox
+    Friend WithEvents ButtonUnbind As System.Windows.Forms.Button
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
 
 End Class

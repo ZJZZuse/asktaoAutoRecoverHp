@@ -12,6 +12,13 @@
     Private hpMpUserControls
 
 
+    Private autoFightManagers() As AutoFightManager
+
+    Private goalMap As New Hashtable
+
+    Private goalHwnds As New Collection
+
+
     Sub New()
 
         ' 此调用是设计器所必需的。
@@ -24,6 +31,7 @@
 
 
     End Sub
+
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
@@ -136,9 +144,23 @@
 
     Private Sub TimersimpleHMp_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TimersimpleHMp.Tick
 
+        For Each item As AutoFightManager In autoFightManagers
+
+            item.recoverPetRoleHMPAnyWFacede()
+
+        Next
+
     End Sub
 
     Private Sub TimerAutoClickCBtn_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TimerAutoClickCBtn.Tick
+
+        For Each item As AutoFightManager In autoFightManagers
+
+            item.clickContinueBtn()
+
+
+        Next
+
 
     End Sub
 
@@ -147,4 +169,54 @@
         TimerAutoClickCBtn.Enabled = sender.Checked
     End Sub
 
+    Private Sub findGoalWins()
+
+        ListBoxGoalWins.Items.Clear()
+
+        Dim hwndsS = dm.EnumWindow(0, "问道", "AskTao", 1 + 4 + 8 + 16 + 2)
+
+        Dim hwnds = Split(hwndsS, ",")
+
+        goalMap.Clear()
+
+        For Each item As String In hwnds
+
+            Dim intItem = CInt(item)
+
+            Dim name = dm.GetWindowTitle(intItem)
+
+            goalMap.Add(name, intItem)
+
+            ListBoxGoalWins.Items.Add(name)
+
+        Next
+
+
+        End Sub
+
+    Private Sub ListBoxGoalWins_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles ListBoxGoalWins.GotFocus
+
+        findGoalWins()
+
+    End Sub
+
+    Private Sub ListBoxGoalWins_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListBoxGoalWins.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+
+        Dim items = ListBoxGoalWins.SelectedItems
+
+        Dim hwnds = New Collection
+
+        For Each item In items
+
+            hwnds.Add(goalMap.Item(item))
+
+        Next
+
+        'todo bind and goalObj set
+
+    End Sub
 End Class
