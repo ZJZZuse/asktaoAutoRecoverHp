@@ -26,6 +26,7 @@ Partial Class Form1
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.LabelBindCount = New System.Windows.Forms.Label()
@@ -33,24 +34,24 @@ Partial Class Form1
         Me.Button2 = New System.Windows.Forms.Button()
         Me.ListBoxGoalWins = New System.Windows.Forms.ListBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.CheckBoxTaishangLaojun = New System.Windows.Forms.CheckBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.CheckBoxEnableSimpleHpMp = New System.Windows.Forms.CheckBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.NumericUpDownsmhp = New System.Windows.Forms.NumericUpDown()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TimerAllRecover = New System.Windows.Forms.Timer(Me.components)
         Me.TimersimpleHMp = New System.Windows.Forms.Timer(Me.components)
         Me.TimerAutoClickCBtn = New System.Windows.Forms.Timer(Me.components)
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
-        Me.CheckBoxTaishangLaojun = New System.Windows.Forms.CheckBox()
         Me.TimerTaishangLaojun = New System.Windows.Forms.Timer(Me.components)
+        Me.TimerRandom = New System.Windows.Forms.Timer(Me.components)
         Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.NumericUpDownsmhp, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button1
@@ -81,6 +82,18 @@ Partial Class Form1
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(290, 305)
         Me.TabControl1.TabIndex = 2
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.Button1)
+        Me.TabPage1.Controls.Add(Me.TextBox1)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(282, 279)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "TabPage1"
+        Me.TabPage1.UseVisualStyleBackColor = True
         '
         'TabPage2
         '
@@ -121,7 +134,7 @@ Partial Class Form1
         Me.ButtonUnbind.Name = "ButtonUnbind"
         Me.ButtonUnbind.Size = New System.Drawing.Size(75, 23)
         Me.ButtonUnbind.TabIndex = 2
-        Me.ButtonUnbind.Text = "unbind"
+        Me.ButtonUnbind.Text = "unbind all"
         Me.ButtonUnbind.UseVisualStyleBackColor = True
         '
         'Button2
@@ -136,8 +149,9 @@ Partial Class Form1
         'ListBoxGoalWins
         '
         Me.ListBoxGoalWins.FormattingEnabled = True
+        Me.ListBoxGoalWins.HorizontalScrollbar = True
         Me.ListBoxGoalWins.ItemHeight = 12
-        Me.ListBoxGoalWins.Items.AddRange(New Object() {"a", "a", "a", "a", "a"})
+        Me.ListBoxGoalWins.Items.AddRange(New Object() {"click here for init"})
         Me.ListBoxGoalWins.Location = New System.Drawing.Point(9, 7)
         Me.ListBoxGoalWins.Name = "ListBoxGoalWins"
         Me.ListBoxGoalWins.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended
@@ -157,6 +171,16 @@ Partial Class Form1
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "simple hp mp"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'CheckBoxTaishangLaojun
+        '
+        Me.CheckBoxTaishangLaojun.AutoSize = True
+        Me.CheckBoxTaishangLaojun.Location = New System.Drawing.Point(30, 257)
+        Me.CheckBoxTaishangLaojun.Name = "CheckBoxTaishangLaojun"
+        Me.CheckBoxTaishangLaojun.Size = New System.Drawing.Size(162, 16)
+        Me.CheckBoxTaishangLaojun.TabIndex = 5
+        Me.CheckBoxTaishangLaojun.Text = "Taishang Laojun waraing"
+        Me.CheckBoxTaishangLaojun.UseVisualStyleBackColor = True
         '
         'CheckBox1
         '
@@ -190,9 +214,11 @@ Partial Class Form1
         'NumericUpDownsmhp
         '
         Me.NumericUpDownsmhp.Location = New System.Drawing.Point(3, 3)
+        Me.NumericUpDownsmhp.Minimum = New Decimal(New Integer() {5, 0, 0, 0})
         Me.NumericUpDownsmhp.Name = "NumericUpDownsmhp"
         Me.NumericUpDownsmhp.Size = New System.Drawing.Size(120, 21)
         Me.NumericUpDownsmhp.TabIndex = 1
+        Me.NumericUpDownsmhp.Value = New Decimal(New Integer() {15, 0, 0, 0})
         '
         'Label1
         '
@@ -203,23 +229,12 @@ Partial Class Form1
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "s"
         '
-        'TabPage1
-        '
-        Me.TabPage1.Controls.Add(Me.Button1)
-        Me.TabPage1.Controls.Add(Me.TextBox1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(282, 279)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "TabPage1"
-        Me.TabPage1.UseVisualStyleBackColor = True
-        '
         'TimersimpleHMp
         '
         '
         'TimerAutoClickCBtn
         '
+        Me.TimerAutoClickCBtn.Interval = 10000
         '
         'LinkLabel1
         '
@@ -231,19 +246,14 @@ Partial Class Form1
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "about"
         '
-        'CheckBoxTaishangLaojun
-        '
-        Me.CheckBoxTaishangLaojun.AutoSize = True
-        Me.CheckBoxTaishangLaojun.Location = New System.Drawing.Point(30, 257)
-        Me.CheckBoxTaishangLaojun.Name = "CheckBoxTaishangLaojun"
-        Me.CheckBoxTaishangLaojun.Size = New System.Drawing.Size(162, 16)
-        Me.CheckBoxTaishangLaojun.TabIndex = 5
-        Me.CheckBoxTaishangLaojun.Text = "Taishang Laojun waraing"
-        Me.CheckBoxTaishangLaojun.UseVisualStyleBackColor = True
-        '
         'TimerTaishangLaojun
         '
         Me.TimerTaishangLaojun.Interval = 30000
+        '
+        'TimerRandom
+        '
+        Me.TimerRandom.Enabled = True
+        Me.TimerRandom.Interval = 10000
         '
         'Form1
         '
@@ -255,6 +265,8 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.Text = "simple helper for askTao"
         Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
@@ -262,8 +274,6 @@ Partial Class Form1
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.NumericUpDownsmhp, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -290,5 +300,6 @@ Partial Class Form1
     Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
     Friend WithEvents CheckBoxTaishangLaojun As System.Windows.Forms.CheckBox
     Friend WithEvents TimerTaishangLaojun As System.Windows.Forms.Timer
+    Friend WithEvents TimerRandom As System.Windows.Forms.Timer
 
 End Class

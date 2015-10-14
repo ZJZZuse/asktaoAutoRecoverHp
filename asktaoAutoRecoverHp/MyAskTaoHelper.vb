@@ -1,5 +1,9 @@
 ﻿Public Class MyAskTaoHelper
 
+    Dim dm_ret As Integer
+    Dim intX As Object
+    Dim intY As Object
+
     Property dm As Dm.dmsoft
 
     Property myDm As MyDm
@@ -38,6 +42,8 @@
     Sub recoverPetRoleHMPAnyWFacede()
 
         recoverPetHpAndMp()
+        myDm.delay(100)
+
         recoverRoleHpAndMp()
 
 
@@ -232,19 +238,28 @@
         myDm.delay(100)
 
         dm.RightClick()
-        dm.RightClick()
+        'dm.RightClick()
 
     End Sub
 
     Private Sub recoverRoleHpAndMp()
-        Throw New NotImplementedException
+        myDm.initMousePosition()
+
+        dm.MoveTo(671, 40)
+
+        myDm.delay(100)
+
+        dm.RightClick()
+        'dm.RightClick()
     End Sub
 
     Function isTaishangLaojunAppearing()
 
         'find word
 
-        Return False
+        dm_ret = dm.FindStr(253, 235, 334, 260, "太上老君", "f8e400-000000", 1.0, intX, intY)
+
+        Return dm_ret <> -1
 
     End Function
 

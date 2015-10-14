@@ -30,8 +30,8 @@
     End Sub
 
 
-    Dim zoneWidth As Object = 800
-    Dim zoneHeight As Object = 600
+    Public zoneWidth As Object = 800
+    Public zoneHeight As Object = 600
 
     Sub New()
 
@@ -97,12 +97,6 @@
     End Sub
 
 
-    Protected Overrides Sub Finalize()
-
-        dm.UnBindWindow()
-
-    End Sub
-
     Sub unbind()
 
         dm.UnBindWindow()
@@ -125,5 +119,10 @@
 
     End Sub
 
+    Protected Overloads Sub Dispose()
+
+        dm.UnBindWindow()
+
+    End Sub
 
 End Class

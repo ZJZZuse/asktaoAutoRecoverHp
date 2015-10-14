@@ -4,6 +4,8 @@
 
     Private Const basePath = "E:\software\大漠插件\字体"
 
+    Private Const fileName = "dm_soft.txt"
+
     Dim dm_ret As Integer
 
     Dim zoneWidth As Object = 800
@@ -42,9 +44,11 @@
 
         'dm_ret = dm.SetDict(0, "dm_soft.txt")
 
-        'dm_ret = dm.CaptureJpg(0, 0, zoneWidth, zoneHeight, Now.Millisecond + "screen.jpg", 100)
+        ' dm_ret = dm.CaptureJpg(0, 0, zoneWidth, zoneHeight, Now.Millisecond + "screen.jpg", 100)
 
-        ''dm_ret = dm.CaptureJpg(0, 0, zoneWidth, zoneHeight, "1screen.jpg", 100)
+        'dm_ret = dm.CaptureJpg(0, 0, zoneWidth, zoneHeight, "1screen.jpg", 100)
+
+        initTimeer(NumericUpDownsmhp)
 
     End Sub
 
@@ -122,12 +126,26 @@
 
     End Sub
 
-    Private Sub NumericUpDownsmhp_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles NumericUpDownsmhp.LostFocus
+    Private Sub NumericUpDownsmhp_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles NumericUpDownsmhp.Enter
+       initTimeer(sender)
+    End Sub
+
+
+    Sub initTimeer(ByVal sender)
+
 
         TimersimpleHMp.Interval = sender.Value * 1000
         TimerAutoClickCBtn.Interval = sender.Value * 1000
 
     End Sub
+
+    'Private Sub NumericUpDownsmhp_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles NumericUpDownsmhp.LostFocus
+
+    '    TimersimpleHMp.Interval = sender.Value * 1000
+    '    TimerAutoClickCBtn.Interval = sender.Value * 1000
+    '    TimerRandom.Interval = sender.Value * 1000
+
+    'End Sub
 
     Private Sub NumericUpDownsmhp_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NumericUpDownsmhp.ValueChanged
 
@@ -189,15 +207,25 @@
         Next
 
 
-        End Sub
+    End Sub
 
     Private Sub ListBoxGoalWins_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles ListBoxGoalWins.GotFocus
 
-        'findGoalWins()
+        ListBoxGoalWins.ScrollAlwaysVisible = False
+        findGoalWins()
+
+
+
 
     End Sub
 
     Private Sub ListBoxGoalWins_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListBoxGoalWins.SelectedIndexChanged
+
+    End Sub
+
+    Sub bindAction(ByVal dm, ByVal hwnd)
+
+        dm_ret = dm.BindWindow(hwnd, "dx2", "dx2", "dx", 0)
 
     End Sub
 
@@ -213,7 +241,11 @@
 
         For Each item In items
 
-            hwnds.Add(goalMap.Item(item))
+            Dim hwnd = goalMap.Item(item)
+
+            Dim mydmT = New MyDm(New Dm.dmsoft, hwnd, AddressOf bindAction)
+
+            autoFightManagers.Add(New AutoFightManager(mydmT))
 
         Next
 
@@ -272,6 +304,19 @@
     Private Sub CheckBoxTaishangLaojun_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBoxTaishangLaojun.CheckedChanged
 
         TimerTaishangLaojun.Enabled = sender.checked
+
+    End Sub
+
+    Private Sub TimerRandom_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TimerRandom.Tick
+
+        Dim r As New Random
+
+        Dim rI = r.Next(0, 6000)
+
+        rI -= 3000
+
+        TimersimpleHMp.Interval += rI
+        TimerAutoClickCBtn.Interval += rI
 
     End Sub
 End Class
