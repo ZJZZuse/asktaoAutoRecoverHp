@@ -253,4 +253,25 @@
     Private Sub TabPage1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TabPage1.Click
 
     End Sub
+
+    Private Sub TimerTaishangLaojun_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TimerTaishangLaojun.Tick
+
+        For Each item As AutoFightManager In autoFightManagers
+
+            If item.isTaishangLaojunAppearing() Then
+
+                dm.Beep(500, 5000)
+
+            End If
+
+
+        Next
+
+    End Sub
+
+    Private Sub CheckBoxTaishangLaojun_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBoxTaishangLaojun.CheckedChanged
+
+        TimerTaishangLaojun.Enabled = sender.checked
+
+    End Sub
 End Class

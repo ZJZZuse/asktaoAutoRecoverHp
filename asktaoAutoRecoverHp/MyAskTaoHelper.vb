@@ -240,4 +240,12 @@
         Throw New NotImplementedException
     End Sub
 
+    Function isTaishangLaojunAppearing()
+
+        'find word
+
+        Return False
+
+    End Function
+
 End Class

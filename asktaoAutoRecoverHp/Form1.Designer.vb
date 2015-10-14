@@ -43,6 +43,8 @@ Partial Class Form1
         Me.TimersimpleHMp = New System.Windows.Forms.Timer(Me.components)
         Me.TimerAutoClickCBtn = New System.Windows.Forms.Timer(Me.components)
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.CheckBoxTaishangLaojun = New System.Windows.Forms.CheckBox()
+        Me.TimerTaishangLaojun = New System.Windows.Forms.Timer(Me.components)
         Me.TabControl1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
@@ -144,6 +146,7 @@ Partial Class Form1
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.CheckBoxTaishangLaojun)
         Me.TabPage3.Controls.Add(Me.CheckBox1)
         Me.TabPage3.Controls.Add(Me.CheckBoxEnableSimpleHpMp)
         Me.TabPage3.Controls.Add(Me.Panel1)
@@ -228,6 +231,20 @@ Partial Class Form1
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "about"
         '
+        'CheckBoxTaishangLaojun
+        '
+        Me.CheckBoxTaishangLaojun.AutoSize = True
+        Me.CheckBoxTaishangLaojun.Location = New System.Drawing.Point(30, 257)
+        Me.CheckBoxTaishangLaojun.Name = "CheckBoxTaishangLaojun"
+        Me.CheckBoxTaishangLaojun.Size = New System.Drawing.Size(162, 16)
+        Me.CheckBoxTaishangLaojun.TabIndex = 5
+        Me.CheckBoxTaishangLaojun.Text = "Taishang Laojun waraing"
+        Me.CheckBoxTaishangLaojun.UseVisualStyleBackColor = True
+        '
+        'TimerTaishangLaojun
+        '
+        Me.TimerTaishangLaojun.Interval = 30000
+        '
         'Form1
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -271,5 +288,7 @@ Partial Class Form1
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents LabelBindCount As System.Windows.Forms.Label
     Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
+    Friend WithEvents CheckBoxTaishangLaojun As System.Windows.Forms.CheckBox
+    Friend WithEvents TimerTaishangLaojun As System.Windows.Forms.Timer
 
 End Class
