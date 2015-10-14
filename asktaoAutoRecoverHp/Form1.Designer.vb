@@ -27,6 +27,8 @@ Partial Class Form1
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.LabelBindCount = New System.Windows.Forms.Label()
         Me.ButtonUnbind = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.ListBoxGoalWins = New System.Windows.Forms.ListBox()
@@ -40,8 +42,7 @@ Partial Class Form1
         Me.TimerAllRecover = New System.Windows.Forms.Timer(Me.components)
         Me.TimersimpleHMp = New System.Windows.Forms.Timer(Me.components)
         Me.TimerAutoClickCBtn = New System.Windows.Forms.Timer(Me.components)
-        Me.LabelBindCount = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.TabControl1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
@@ -64,7 +65,7 @@ Partial Class Form1
         Me.TextBox1.Location = New System.Drawing.Point(8, 6)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(164, 130)
+        Me.TextBox1.Size = New System.Drawing.Size(164, 223)
         Me.TextBox1.TabIndex = 1
         '
         'TabControl1
@@ -76,7 +77,7 @@ Partial Class Form1
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(290, 297)
+        Me.TabControl1.Size = New System.Drawing.Size(290, 305)
         Me.TabControl1.TabIndex = 2
         '
         'TabPage2
@@ -89,10 +90,28 @@ Partial Class Form1
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(282, 271)
+        Me.TabPage2.Size = New System.Drawing.Size(282, 279)
         Me.TabPage2.TabIndex = 3
         Me.TabPage2.Text = "binding"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(188, 59)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(71, 12)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "bind count:"
+        '
+        'LabelBindCount
+        '
+        Me.LabelBindCount.AutoSize = True
+        Me.LabelBindCount.Location = New System.Drawing.Point(265, 59)
+        Me.LabelBindCount.Name = "LabelBindCount"
+        Me.LabelBindCount.Size = New System.Drawing.Size(11, 12)
+        Me.LabelBindCount.TabIndex = 3
+        Me.LabelBindCount.Text = "0"
         '
         'ButtonUnbind
         '
@@ -131,7 +150,7 @@ Partial Class Form1
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(282, 271)
+        Me.TabPage3.Size = New System.Drawing.Size(282, 279)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "simple hp mp"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -199,32 +218,25 @@ Partial Class Form1
         'TimerAutoClickCBtn
         '
         '
-        'LabelBindCount
+        'LinkLabel1
         '
-        Me.LabelBindCount.AutoSize = True
-        Me.LabelBindCount.Location = New System.Drawing.Point(188, 57)
-        Me.LabelBindCount.Name = "LabelBindCount"
-        Me.LabelBindCount.Size = New System.Drawing.Size(89, 12)
-        Me.LabelBindCount.TabIndex = 3
-        Me.LabelBindCount.Text = "LabelBindCount"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(191, 29)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(71, 12)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "bind count:"
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Location = New System.Drawing.Point(243, 311)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(35, 12)
+        Me.LinkLabel1.TabIndex = 3
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "about"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(290, 332)
+        Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Text = "simple helper for askTao"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
@@ -236,6 +248,7 @@ Partial Class Form1
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Button1 As System.Windows.Forms.Button
@@ -257,5 +270,6 @@ Partial Class Form1
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents LabelBindCount As System.Windows.Forms.Label
+    Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
 
 End Class
