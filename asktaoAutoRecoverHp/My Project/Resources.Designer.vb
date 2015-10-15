@@ -61,22 +61,22 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized resource of type System.Byte[].
+        '''  查找类似 041082104218450B3F842C84508610420040$天$0.0.43$13
+        '''080103FF841000FFD002AB555FFD552FB440$墉$0.0.79$14
+        '''080103FF8410003FC4809F101FF041C8C562$城$0.0.68$14
+        '''108263FF89011308A364B0A4349B1C42007E$杨$0.0.65$14
+        '''0882939F924000B89553EA554AADF52AA5C4$镖$0.0.76$14
+        '''01002044068810C200480EFF002804808010$头$0.0.39$14
+        '''108213FF888000FFD112227FE889112227FE$押$0.0.70$14
+        '''081A03800$，$0.0.7$5
+        '''3E0822024044107C0$0$0.0.18$9
+        '''408813FE004008$1$0.0.15$9
+        '''38041E823742A8553AF9542A8DD682107380$常$0.0.62$13
+        '''22244490949312427F590D312504909112 [字符串的其余部分被截断]&quot;; 的本地化字符串。
         '''</summary>
-        Friend ReadOnly Property BS24() As Byte()
+        Friend ReadOnly Property dm_soft() As String
             Get
-                Dim obj As Object = ResourceManager.GetObject("BS24", resourceCulture)
-                Return CType(obj,Byte())
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Byte[].
-        '''</summary>
-        Friend ReadOnly Property dm() As Byte()
-            Get
-                Dim obj As Object = ResourceManager.GetObject("dm", resourceCulture)
-                Return CType(obj,Byte())
+                Return ResourceManager.GetString("dm_soft", resourceCulture)
             End Get
         End Property
         

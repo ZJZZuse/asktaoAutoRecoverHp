@@ -1,6 +1,6 @@
 ﻿Public Class MyAskTaoBase
 
-    Dim dm_ret As Integer
+    Protected dm_ret As Integer
     Dim intX As Object
     Dim intY As Object
 

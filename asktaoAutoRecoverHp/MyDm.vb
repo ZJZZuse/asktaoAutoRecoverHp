@@ -13,10 +13,17 @@
 
     Property dm_ret
 
-    Property basePath = "E:\software\大漠插件\字体"
+    ' Property basePath = "E:\software\大漠插件\字体"
 
-    Property dictName = "dm_soft.txt"
 
+    Property basePath = "Resources"
+
+
+
+
+    'Property dictName = "dm_soft.txt"
+
+    Property dictName = "D:\webStormWorkPlace\github\asktaoAutoRecoverHp\asktaoAutoRecoverHp\Resources\dm_soft.txt"
 
     Property hwnd
 
@@ -68,7 +75,9 @@
 
         bindAction.Invoke(dm, hwnd)
 
-        dm_ret = dm.SetPath(basePath)
+        basePath = dm.GetBasePath()
+
+        ' dm_ret = dm.SetPath(basePath)
 
         dm_ret = dm.SetDict(0, dictName)
 

@@ -6,20 +6,17 @@ asktaoAutoRecoverHp
 </name>
 </assembly>
 <members>
-<member name="M:asktaoAutoRecoverHp.DmGuard.initAndGoGuard">
-	<summary>
- common usage
- </summary>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:asktaoAutoRecoverHp.MyGameBaseHelper.generateCommonInterval">
-	<summary>
-	</summary>
-	<returns>ms</returns>
-	<remarks></remarks>
-</member><member name="M:asktaoAutoRecoverHp.AutoFightManager.autoFightF">
+<member name="M:asktaoAutoRecoverHp.AutoFightManager.autoFightF">
  隔个10s运行一次即可
 
+</member><member name="M:asktaoAutoRecoverHp.MyDm.#ctor(Dm.dmsoft,System.Int32,asktaoAutoRecoverHp.MyDm.bindAction)">
+	<summary>
+ common one time builder
+ </summary>
+	<param name="dm"></param>
+	<param name="hwnd"></param>
+	<param name="bindAction"></param>
+	<remarks></remarks>
 </member><member name="M:asktaoAutoRecoverHp.MyAskTaoBase.recoverPetRoleHMPAutoFacede(System.Object,System.Object,System.Object,System.Object)">
 	<summary>
  that's take effect in unfighting condition.
@@ -41,6 +38,12 @@ asktaoAutoRecoverHp
  </summary>
 	<returns></returns>
 	<remarks></remarks>
+</member><member name="M:asktaoAutoRecoverHp.DmGuard.initAndGoGuard">
+	<summary>
+ common usage
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
 </member><member name="P:asktaoAutoRecoverHp.My.Resources.Resources.ResourceManager">
 	<summary>
   返回此类使用的缓存的 ResourceManager 实例。
@@ -50,13 +53,20 @@ asktaoAutoRecoverHp
   使用此强类型资源类，为所有资源查找
   重写当前线程的 CurrentUICulture 属性。
 </summary>
-</member><member name="P:asktaoAutoRecoverHp.My.Resources.Resources.BS24">
+</member><member name="P:asktaoAutoRecoverHp.My.Resources.Resources.dm_soft">
 	<summary>
-  Looks up a localized resource of type System.Byte[].
-</summary>
-</member><member name="P:asktaoAutoRecoverHp.My.Resources.Resources.dm">
-	<summary>
-  Looks up a localized resource of type System.Byte[].
+  查找类似 041082104218450B3F842C84508610420040$天$0.0.43$13
+080103FF841000FFD002AB555FFD552FB440$墉$0.0.79$14
+080103FF8410003FC4809F101FF041C8C562$城$0.0.68$14
+108263FF89011308A364B0A4349B1C42007E$杨$0.0.65$14
+0882939F924000B89553EA554AADF52AA5C4$镖$0.0.76$14
+01002044068810C200480EFF002804808010$头$0.0.39$14
+108213FF888000FFD112227FE889112227FE$押$0.0.70$14
+081A03800$，$0.0.7$5
+3E0822024044107C0$0$0.0.18$9
+408813FE004008$1$0.0.15$9
+38041E823742A8553AF9542A8DD682107380$常$0.0.62$13
+22244490949312427F590D312504909112 [字符串的其余部分被截断]"; 的本地化字符串。
 </summary>
 </member><member name="P:asktaoAutoRecoverHp.My.Resources.Resources.hpString">
 	<summary>
@@ -74,13 +84,10 @@ asktaoAutoRecoverHp
 	<summary>
   一个强类型的资源类，用于查找本地化的字符串等。
 </summary>
-</member><member name="M:asktaoAutoRecoverHp.MyDm.#ctor(Dm.dmsoft,System.Int32,asktaoAutoRecoverHp.MyDm.bindAction)">
+</member><member name="M:asktaoAutoRecoverHp.MyGameBaseHelper.generateCommonInterval">
 	<summary>
- common one time builder
- </summary>
-	<param name="dm"></param>
-	<param name="hwnd"></param>
-	<param name="bindAction"></param>
+	</summary>
+	<returns>ms</returns>
 	<remarks></remarks>
 </member>
 </members>

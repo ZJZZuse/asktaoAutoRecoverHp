@@ -13,7 +13,9 @@
 
     Sub sendSTring(ByVal s)
 
-        dm.SendString(myDm.hwnd, s)
+        dm_ret = dm.ActiveInputMethod(myDm.hwnd, "Chinese (Simplified, Singapore) - US Keyboard")
+
+        dm.SendString2(myDm.hwnd, s)
 
         myDm.delay(100)
 

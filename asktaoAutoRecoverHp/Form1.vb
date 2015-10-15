@@ -30,13 +30,21 @@
 
         ' 在 InitializeComponent() 调用之后添加任何初始化。
 
+        'Dim bsSoft As New bssoftT.Class
+
+        'bsSoft.RegisterPlugin("bsplugin")
+
+        'MsgBox(bsSoft.ver())
+
+        SysRleHelper.regeditDll()
+
 
         TabControl1.TabPages.RemoveAt(0)
 
         Me.FormBorderStyle = FormBorderStyle.FixedSingle
 
-        '调试的时候注释调
-        'DmGuard.initAndGoGuard()
+        '调试的时候注释
+        ' DmGuard.initAndGoGuard()
 
 
     End Sub
@@ -162,6 +170,7 @@
 
 
         TimersimpleHMp.Interval = sender.Value * 1000
+
         TimerAutoClickCBtn.Interval = sender.Value * 1000
 
     End Sub
@@ -366,6 +375,8 @@
 
         rI -= 3000
 
+        initTimeer(NumericUpDownsmhp)
+
         TimersimpleHMp.Interval += rI
         TimerAutoClickCBtn.Interval += rI
 
@@ -385,7 +396,11 @@
 
     Private Sub TimerAutoSendS_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TimerAutoSendS.Tick
 
-        TimerAutoSendS.Interval += MyGameBaseHelper.generateCommonInterval
+        TimerAutoSendS.Interval = NumericUpDownAutoSendS.Value * 1000
+
+        TimerAutoSendS.Interval += MyGameBaseHelper.generateCommonInterval()
+
+
 
         Dim s = sForSends(sForSendsIndex)
 
@@ -409,6 +424,10 @@
     End Sub
 
     Private Sub TextBox2_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBoxAutoTalk.TextChanged
+
+    End Sub
+
+    Private Sub TabPage2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TabPage2.Click
 
     End Sub
 End Class

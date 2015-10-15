@@ -1,6 +1,6 @@
 ﻿Public Class DmGuard
 
-    Public Shared bsSoft As New BS24.Class
+    Public Shared bsSoft As New bssoftT.Class
 
     ''' <summary>
     ''' common usage
@@ -9,19 +9,25 @@
     ''' <remarks></remarks>
     Shared Function initAndGoGuard()
 
-        Return {registerBs(), doGuard()}
+        Dim r(2)
+
+        r(0) = DmGuard.registerBs()
+
+        r(1) = DmGuard.doGuard()
+
+        Return r(2)
 
     End Function
 
     Shared Function registerBs()
 
-        Return bsSoft.RegisterPlugin("bsplugin")
+        Return DmGuard.bsSoft.RegisterPlugin("bsplugin")
 
     End Function
 
     Shared Function doGuard()
 
-        Return bsSoft.SuperProtect()
+        Return DmGuard.bsSoft.SuperProtect()
 
 
     End Function
