@@ -66,6 +66,10 @@ asktaoAutoRecoverHp
 	<summary>
   查找类似 mp 的本地化字符串。
 </summary>
+</member><member name="P:asktaoAutoRecoverHp.My.Resources.Resources.wrongS">
+	<summary>
+  查找类似 系统出问题，请联系作者，联系方式见about 的本地化字符串。
+</summary>
 </member><member name="T:asktaoAutoRecoverHp.My.Resources.Resources">
 	<summary>
   一个强类型的资源类，用于查找本地化的字符串等。

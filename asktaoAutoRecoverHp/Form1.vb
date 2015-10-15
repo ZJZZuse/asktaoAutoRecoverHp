@@ -2,6 +2,7 @@
 
     Private dm As New Dm.dmsoft
 
+
     Private Const basePath = "E:\software\大漠插件\字体"
 
     Private Const fileName = "dm_soft.txt"
@@ -37,6 +38,7 @@
         '调试的时候注释调
         'DmGuard.initAndGoGuard()
 
+
     End Sub
 
 
@@ -57,6 +59,9 @@
         'dm_ret = dm.CaptureJpg(0, 0, zoneWidth, zoneHeight, "1screen.jpg", 100)
 
         initTimeer(NumericUpDownsmhp)
+
+        'MsgBox(dm.Ver)
+
 
     End Sub
 
@@ -234,8 +239,16 @@
     Private Sub ListBoxGoalWins_GotFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles ListBoxGoalWins.GotFocus
 
         ListBoxGoalWins.ScrollAlwaysVisible = False
-        findGoalWins()
 
+        Try
+
+            findGoalWins()
+
+        Catch ex As Exception
+
+
+
+        End Try
 
 
 

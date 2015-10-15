@@ -130,4 +130,7 @@
   <data name="mpString" xml:space="preserve">
     <value>mp</value>
   </data>
+  <data name="wrongS" xml:space="preserve">
+    <value>系统出问题，请联系作者，联系方式见about</value>
+  </data>
 </root>

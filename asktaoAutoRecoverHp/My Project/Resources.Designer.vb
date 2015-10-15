@@ -97,5 +97,14 @@ Namespace My.Resources
                 Return ResourceManager.GetString("mpString", resourceCulture)
             End Get
         End Property
+        
+        '''<summary>
+        '''  查找类似 系统出问题，请联系作者，联系方式见about 的本地化字符串。
+        '''</summary>
+        Friend ReadOnly Property wrongS() As String
+            Get
+                Return ResourceManager.GetString("wrongS", resourceCulture)
+            End Get
+        End Property
     End Module
 End Namespace

@@ -24,3 +24,8 @@ D:\myworkplaceTest\vb.net2010\asktaoAutoRecoverHp\asktaoAutoRecoverHp\obj\x86\De
 D:\myworkplaceTest\vb.net2010\asktaoAutoRecoverHp\asktaoAutoRecoverHp\obj\x86\Debug\asktaoAutoRecoverHp.exe
 D:\myworkplaceTest\vb.net2010\asktaoAutoRecoverHp\asktaoAutoRecoverHp\obj\x86\Debug\asktaoAutoRecoverHp.xml
 D:\myworkplaceTest\vb.net2010\asktaoAutoRecoverHp\asktaoAutoRecoverHp\obj\x86\Debug\asktaoAutoRecoverHp.pdb
+D:\myworkplaceTest\vb.net2010\asktaoAutoRecoverHp\asktaoAutoRecoverHp\bin\Debug\asktaoAutoRecoverHp.exe.manifest
+D:\myworkplaceTest\vb.net2010\asktaoAutoRecoverHp\asktaoAutoRecoverHp\bin\Debug\asktaoAutoRecoverHp.application
+D:\myworkplaceTest\vb.net2010\asktaoAutoRecoverHp\asktaoAutoRecoverHp\obj\x86\Debug\asktaoAutoRecoverHp.exe.manifest
+D:\myworkplaceTest\vb.net2010\asktaoAutoRecoverHp\asktaoAutoRecoverHp\obj\x86\Debug\asktaoAutoRecoverHp.application
+D:\myworkplaceTest\vb.net2010\asktaoAutoRecoverHp\asktaoAutoRecoverHp\obj\x86\Debug\asktaoAutoRecoverHp.vbprojResolveAssemblyReference.cache
