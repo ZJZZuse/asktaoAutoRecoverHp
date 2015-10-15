@@ -26,7 +26,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>6</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -83,9 +83,6 @@
     <Reference Include="BS24">
       <HintPath>..\..\..\..\BS24.DLL</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="log4net">
-      <HintPath>..\..\..\..\360安全浏览器下载\log4net-1.2.13-bin-newkey\log4net-1.2.13\bin\net\4.0\release\log4net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

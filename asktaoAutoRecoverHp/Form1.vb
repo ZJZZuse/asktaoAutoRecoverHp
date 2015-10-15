@@ -215,7 +215,13 @@
 
         ListBoxGoalWins.Items.Clear()
 
-        Dim hwndsS = dm.EnumWindow(0, "问道", "AskTao", 1 + 4 + 8 + 16 + 2)
+        Dim hwndsS As String = dm.EnumWindow(0, "问道", "AskTao", 1 + 4 + 8 + 16 + 2)
+
+        If String.IsNullOrEmpty(hwndsS) Then
+
+            Exit Sub
+
+        End If
 
         Dim hwnds = Split(hwndsS, ",")
 
