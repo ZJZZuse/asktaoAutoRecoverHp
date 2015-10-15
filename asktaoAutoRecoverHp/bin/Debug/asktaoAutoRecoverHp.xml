@@ -6,10 +6,21 @@ asktaoAutoRecoverHp
 </name>
 </assembly>
 <members>
-<member name="M:asktaoAutoRecoverHp.AutoFightManager.autoFightF">
+<member name="M:asktaoAutoRecoverHp.DmGuard.initAndGoGuard">
+	<summary>
+ common usage
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:asktaoAutoRecoverHp.MyGameBaseHelper.generateCommonInterval">
+	<summary>
+	</summary>
+	<returns>ms</returns>
+	<remarks></remarks>
+</member><member name="M:asktaoAutoRecoverHp.AutoFightManager.autoFightF">
  隔个10s运行一次即可
 
-</member><member name="M:asktaoAutoRecoverHp.MyAskTaoHelper.recoverPetRoleHMPAutoFacede(System.Object,System.Object,System.Object,System.Object)">
+</member><member name="M:asktaoAutoRecoverHp.MyAskTaoBase.recoverPetRoleHMPAutoFacede(System.Object,System.Object,System.Object,System.Object)">
 	<summary>
  that's take effect in unfighting condition.
  is the main w for use
@@ -19,24 +30,16 @@ asktaoAutoRecoverHp
 	<param name="pHpR"></param>
 	<param name="pMpR"></param>
 	<remarks></remarks>
-</member><member name="M:asktaoAutoRecoverHp.MyAskTaoHelper.recoverPetRoleHMPAnyWFacede">
+</member><member name="M:asktaoAutoRecoverHp.MyAskTaoBase.recoverPetRoleHMPAnyWFacede">
 	<summary>
  more common in daily use
  </summary>
 	<remarks></remarks>
-</member><member name="M:asktaoAutoRecoverHp.MyAskTaoHelper.gainPetMp">
+</member><member name="M:asktaoAutoRecoverHp.MyAskTaoBase.gainPetMp">
 	<summary>
  to do
  </summary>
 	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:asktaoAutoRecoverHp.MyDm.#ctor(Dm.dmsoft,System.Int32,asktaoAutoRecoverHp.MyDm.bindAction)">
-	<summary>
- common one time builder
- </summary>
-	<param name="dm"></param>
-	<param name="hwnd"></param>
-	<param name="bindAction"></param>
 	<remarks></remarks>
 </member><member name="P:asktaoAutoRecoverHp.My.Resources.Resources.ResourceManager">
 	<summary>
@@ -46,6 +49,14 @@ asktaoAutoRecoverHp
 	<summary>
   使用此强类型资源类，为所有资源查找
   重写当前线程的 CurrentUICulture 属性。
+</summary>
+</member><member name="P:asktaoAutoRecoverHp.My.Resources.Resources.BS24">
+	<summary>
+  Looks up a localized resource of type System.Byte[].
+</summary>
+</member><member name="P:asktaoAutoRecoverHp.My.Resources.Resources.dm">
+	<summary>
+  Looks up a localized resource of type System.Byte[].
 </summary>
 </member><member name="P:asktaoAutoRecoverHp.My.Resources.Resources.hpString">
 	<summary>
@@ -59,6 +70,14 @@ asktaoAutoRecoverHp
 	<summary>
   一个强类型的资源类，用于查找本地化的字符串等。
 </summary>
+</member><member name="M:asktaoAutoRecoverHp.MyDm.#ctor(Dm.dmsoft,System.Int32,asktaoAutoRecoverHp.MyDm.bindAction)">
+	<summary>
+ common one time builder
+ </summary>
+	<param name="dm"></param>
+	<param name="hwnd"></param>
+	<param name="bindAction"></param>
+	<remarks></remarks>
 </member>
 </members>
 </doc>

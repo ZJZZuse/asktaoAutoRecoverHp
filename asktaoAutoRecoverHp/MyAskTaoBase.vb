@@ -1,4 +1,4 @@
-﻿Public Class MyAskTaoHelper
+﻿Public Class MyAskTaoBase
 
     Dim dm_ret As Integer
     Dim intX As Object

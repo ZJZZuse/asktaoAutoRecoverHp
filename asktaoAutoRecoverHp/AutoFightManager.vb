@@ -1,6 +1,6 @@
 ﻿Public Class AutoFightManager
 
-    Inherits MyAskTaoHelper
+    Inherits MyAskTaoBase
 
     Dim dm_ret As Integer
 

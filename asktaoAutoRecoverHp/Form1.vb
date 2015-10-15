@@ -13,10 +13,14 @@
 
     Private autoFightManagers As New Collection
 
+    Private askTaoCommonFunctionMangers As New Collection
+
     Private goalMap As New Hashtable
 
     Private goalHwnds As New Collection
 
+    Private sForSends()
+    Private sForSendsIndex = 0
 
     Sub New()
 
@@ -29,6 +33,10 @@
         TabControl1.TabPages.RemoveAt(0)
 
         Me.FormBorderStyle = FormBorderStyle.FixedSingle
+
+        '调试的时候注释调
+        'DmGuard.initAndGoGuard()
+
     End Sub
 
 
@@ -51,6 +59,20 @@
         initTimeer(NumericUpDownsmhp)
 
     End Sub
+
+
+    Sub sForSendsIndexChanger()
+
+        sForSendsIndex += 1
+
+        If sForSendsIndex >= sForSends.Count Then
+
+            sForSendsIndex = 0
+
+        End If
+
+    End Sub
+
 
     Function gainPetHp()
 
@@ -127,7 +149,7 @@
     End Sub
 
     Private Sub NumericUpDownsmhp_Enter(ByVal sender As Object, ByVal e As System.EventArgs) Handles NumericUpDownsmhp.Enter
-       initTimeer(sender)
+        initTimeer(sender)
     End Sub
 
 
@@ -229,13 +251,9 @@
 
     End Sub
 
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-
-
+    Sub bindWins()
 
         Dim items = ListBoxGoalWins.SelectedItems
-
-        Dim hwnds = New Collection
 
         autoFightManagers.Clear()
 
@@ -246,6 +264,7 @@
             Dim mydmT = New MyDm(New Dm.dmsoft, hwnd, AddressOf bindAction)
 
             autoFightManagers.Add(New AutoFightManager(mydmT))
+            askTaoCommonFunctionMangers.Add(New AskTaoCommonFunctionManger(mydmT))
 
         Next
 
@@ -255,9 +274,10 @@
 
         LabelBindCount.Text = autoFightManagers.Count
 
+
     End Sub
 
-    Private Sub ButtonUnbind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonUnbind.Click
+    Sub unbindWins()
 
         For Each item As AutoFightManager In autoFightManagers
 
@@ -266,8 +286,20 @@
         Next
 
         autoFightManagers.Clear()
+        askTaoCommonFunctionMangers.Clear()
 
         LabelBindCount.Text = autoFightManagers.Count
+
+    End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonBind.Click
+
+        bindWins()
+    End Sub
+
+    Private Sub ButtonUnbind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonUnbind.Click
+
+        unbindWins()
 
     End Sub
 
@@ -317,6 +349,47 @@
 
         TimersimpleHMp.Interval += rI
         TimerAutoClickCBtn.Interval += rI
+
+    End Sub
+
+    Private Sub CheckBoxAutoSendS_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBoxAutoSendS.CheckedChanged
+        TimerAutoSendS.Enabled = sender.Checked
+
+        TimerAutoSendS.Interval = NumericUpDownAutoSendS.Value * 1000
+
+
+    End Sub
+
+    Private Sub NumericUpDownAutoSendS_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NumericUpDownAutoSendS.ValueChanged
+
+    End Sub
+
+    Private Sub TimerAutoSendS_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TimerAutoSendS.Tick
+
+        TimerAutoSendS.Interval += MyGameBaseHelper.generateCommonInterval
+
+        Dim s = sForSends(sForSendsIndex)
+
+
+        For Each askTaoc As AskTaoCommonFunctionManger In askTaoCommonFunctionMangers
+
+            askTaoc.sendSTring(s)
+
+
+        Next
+
+
+        sForSendsIndexChanger()
+
+    End Sub
+
+    Private Sub TextBoxAutoTalk_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles TextBoxAutoTalk.LostFocus
+
+        sForSends = TextBoxAutoTalk.Text.Split(vbCrLf)
+
+    End Sub
+
+    Private Sub TextBox2_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBoxAutoTalk.TextChanged
 
     End Sub
 End Class

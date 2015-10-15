@@ -61,6 +61,26 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property BS24() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("BS24", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property dm() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("dm", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
         '''  查找类似 hp 的本地化字符串。
         '''</summary>
         Friend ReadOnly Property hpString() As String

@@ -9,8 +9,6 @@
 
     Public Delegate Function gainObjByDmCommon(ByVal dm)
 
-
-
     Property dm As Dm.dmsoft
 
     Property dm_ret
@@ -32,12 +30,6 @@
 
     Public zoneWidth As Object = 800
     Public zoneHeight As Object = 600
-
-    Sub New()
-
-
-
-    End Sub
 
     Sub New(ByVal dm)
 
@@ -68,8 +60,9 @@
     End Sub
 
 
-
     Sub initDm(ByVal hwnd As Int32, ByVal bindAction As bindAction)
+
+        'todo protect
 
         Me.hwnd = hwnd
 

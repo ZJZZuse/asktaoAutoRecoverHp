@@ -31,7 +31,7 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.LabelBindCount = New System.Windows.Forms.Label()
         Me.ButtonUnbind = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.ButtonBind = New System.Windows.Forms.Button()
         Me.ListBoxGoalWins = New System.Windows.Forms.ListBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.CheckBoxTaishangLaojun = New System.Windows.Forms.CheckBox()
@@ -40,18 +40,25 @@ Partial Class Form1
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.NumericUpDownsmhp = New System.Windows.Forms.NumericUpDown()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.TabPageAutoTalk = New System.Windows.Forms.TabPage()
+        Me.CheckBoxAutoSendS = New System.Windows.Forms.CheckBox()
+        Me.NumericUpDownAutoSendS = New System.Windows.Forms.NumericUpDown()
+        Me.TextBoxAutoTalk = New System.Windows.Forms.TextBox()
         Me.TimerAllRecover = New System.Windows.Forms.Timer(Me.components)
         Me.TimersimpleHMp = New System.Windows.Forms.Timer(Me.components)
         Me.TimerAutoClickCBtn = New System.Windows.Forms.Timer(Me.components)
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.TimerTaishangLaojun = New System.Windows.Forms.Timer(Me.components)
         Me.TimerRandom = New System.Windows.Forms.Timer(Me.components)
+        Me.TimerAutoSendS = New System.Windows.Forms.Timer(Me.components)
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.NumericUpDownsmhp, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPageAutoTalk.SuspendLayout()
+        CType(Me.NumericUpDownAutoSendS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button1
@@ -76,6 +83,7 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Controls.Add(Me.TabPageAutoTalk)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
@@ -100,7 +108,7 @@ Partial Class Form1
         Me.TabPage2.Controls.Add(Me.Label2)
         Me.TabPage2.Controls.Add(Me.LabelBindCount)
         Me.TabPage2.Controls.Add(Me.ButtonUnbind)
-        Me.TabPage2.Controls.Add(Me.Button2)
+        Me.TabPage2.Controls.Add(Me.ButtonBind)
         Me.TabPage2.Controls.Add(Me.ListBoxGoalWins)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
@@ -137,14 +145,14 @@ Partial Class Form1
         Me.ButtonUnbind.Text = "unbind all"
         Me.ButtonUnbind.UseVisualStyleBackColor = True
         '
-        'Button2
+        'ButtonBind
         '
-        Me.Button2.Location = New System.Drawing.Point(190, 205)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "bind"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.ButtonBind.Location = New System.Drawing.Point(190, 205)
+        Me.ButtonBind.Name = "ButtonBind"
+        Me.ButtonBind.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonBind.TabIndex = 1
+        Me.ButtonBind.Text = "bind"
+        Me.ButtonBind.UseVisualStyleBackColor = True
         '
         'ListBoxGoalWins
         '
@@ -229,6 +237,46 @@ Partial Class Form1
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "s"
         '
+        'TabPageAutoTalk
+        '
+        Me.TabPageAutoTalk.Controls.Add(Me.CheckBoxAutoSendS)
+        Me.TabPageAutoTalk.Controls.Add(Me.NumericUpDownAutoSendS)
+        Me.TabPageAutoTalk.Controls.Add(Me.TextBoxAutoTalk)
+        Me.TabPageAutoTalk.Location = New System.Drawing.Point(4, 22)
+        Me.TabPageAutoTalk.Name = "TabPageAutoTalk"
+        Me.TabPageAutoTalk.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPageAutoTalk.Size = New System.Drawing.Size(282, 279)
+        Me.TabPageAutoTalk.TabIndex = 4
+        Me.TabPageAutoTalk.Text = "AutoTalk"
+        Me.TabPageAutoTalk.UseVisualStyleBackColor = True
+        '
+        'CheckBoxAutoSendS
+        '
+        Me.CheckBoxAutoSendS.AutoSize = True
+        Me.CheckBoxAutoSendS.Location = New System.Drawing.Point(9, 260)
+        Me.CheckBoxAutoSendS.Name = "CheckBoxAutoSendS"
+        Me.CheckBoxAutoSendS.Size = New System.Drawing.Size(114, 16)
+        Me.CheckBoxAutoSendS.TabIndex = 2
+        Me.CheckBoxAutoSendS.Text = "Auto Send words"
+        Me.CheckBoxAutoSendS.UseVisualStyleBackColor = True
+        '
+        'NumericUpDownAutoSendS
+        '
+        Me.NumericUpDownAutoSendS.Location = New System.Drawing.Point(154, 255)
+        Me.NumericUpDownAutoSendS.Minimum = New Decimal(New Integer() {5, 0, 0, 0})
+        Me.NumericUpDownAutoSendS.Name = "NumericUpDownAutoSendS"
+        Me.NumericUpDownAutoSendS.Size = New System.Drawing.Size(120, 21)
+        Me.NumericUpDownAutoSendS.TabIndex = 1
+        Me.NumericUpDownAutoSendS.Value = New Decimal(New Integer() {5, 0, 0, 0})
+        '
+        'TextBoxAutoTalk
+        '
+        Me.TextBoxAutoTalk.Location = New System.Drawing.Point(9, 7)
+        Me.TextBoxAutoTalk.Multiline = True
+        Me.TextBoxAutoTalk.Name = "TextBoxAutoTalk"
+        Me.TextBoxAutoTalk.Size = New System.Drawing.Size(265, 239)
+        Me.TextBoxAutoTalk.TabIndex = 0
+        '
         'TimersimpleHMp
         '
         '
@@ -255,6 +303,9 @@ Partial Class Form1
         Me.TimerRandom.Enabled = True
         Me.TimerRandom.Interval = 10000
         '
+        'TimerAutoSendS
+        '
+        '
         'Form1
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -274,6 +325,9 @@ Partial Class Form1
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.NumericUpDownsmhp, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPageAutoTalk.ResumeLayout(False)
+        Me.TabPageAutoTalk.PerformLayout()
+        CType(Me.NumericUpDownAutoSendS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -291,7 +345,7 @@ Partial Class Form1
     Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
     Friend WithEvents TimerAutoClickCBtn As System.Windows.Forms.Timer
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents ButtonBind As System.Windows.Forms.Button
     Friend WithEvents ListBoxGoalWins As System.Windows.Forms.ListBox
     Friend WithEvents ButtonUnbind As System.Windows.Forms.Button
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
@@ -301,5 +355,10 @@ Partial Class Form1
     Friend WithEvents CheckBoxTaishangLaojun As System.Windows.Forms.CheckBox
     Friend WithEvents TimerTaishangLaojun As System.Windows.Forms.Timer
     Friend WithEvents TimerRandom As System.Windows.Forms.Timer
+    Friend WithEvents TabPageAutoTalk As System.Windows.Forms.TabPage
+    Friend WithEvents CheckBoxAutoSendS As System.Windows.Forms.CheckBox
+    Friend WithEvents NumericUpDownAutoSendS As System.Windows.Forms.NumericUpDown
+    Friend WithEvents TextBoxAutoTalk As System.Windows.Forms.TextBox
+    Friend WithEvents TimerAutoSendS As System.Windows.Forms.Timer
 
 End Class
