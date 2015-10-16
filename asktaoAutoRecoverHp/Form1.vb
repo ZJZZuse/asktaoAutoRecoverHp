@@ -2,6 +2,7 @@
 
     Private dm As New Dm.dmsoft
 
+    Private myDm As MyDm
 
     Private Const basePath = "E:\software\大漠插件\字体"
 
@@ -28,6 +29,14 @@
         ' 此调用是设计器所必需的。
         InitializeComponent()
 
+
+        MySimpleLoger.log("t")
+
+        initDateMe()
+
+        initComponetMe()
+
+
         ' 在 InitializeComponent() 调用之后添加任何初始化。
 
         'Dim bsSoft As New bssoftT.Class
@@ -36,10 +45,19 @@
 
         'MsgBox(bsSoft.ver())
 
-        SysRleHelper.regeditDll()
 
+        '注册dll
+        'SysRleHelper.regeditDll()
+
+
+        ' MsgBox(Application.UserAppDataPath)
+
+
+        ' Debugger.Log(1, "1", Application.UserAppDataRegistry.ToString)
 
         TabControl1.TabPages.RemoveAt(0)
+
+
 
         Me.FormBorderStyle = FormBorderStyle.FixedSingle
 
@@ -48,6 +66,8 @@
 
 
     End Sub
+
+
 
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -421,6 +441,9 @@
 
         sForSends = TextBoxAutoTalk.Text.Split(vbCrLf)
 
+        myDm.writeFileCover("TextBoxAutoTalk_text", TextBoxAutoTalk.Text)
+
+
     End Sub
 
     Private Sub TextBox2_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBoxAutoTalk.TextChanged
@@ -430,4 +453,28 @@
     Private Sub TabPage2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TabPage2.Click
 
     End Sub
+
+
+    Private Sub initComponetMe()
+
+        Dim s As String = myDm.readFile("TextBoxAutoTalk_text")
+
+        If Not String.IsNullOrEmpty(s) Then
+
+            TextBoxAutoTalk.Text = s
+
+        End If
+
+        sForSends = TextBoxAutoTalk.Text.Split(vbCrLf)
+
+    End Sub
+
+    Private Sub initDateMe()
+
+        myDm = New MyDm(dm)
+
+
+
+    End Sub
+
 End Class

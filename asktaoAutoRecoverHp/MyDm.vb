@@ -16,16 +16,16 @@
     ' Property basePath = "E:\software\大漠插件\字体"
 
 
-    Property basePath = "Resources"
-
-
+    Property basePath = ".\data"
 
 
     'Property dictName = "dm_soft.txt"
 
-    Property dictName = "D:\webStormWorkPlace\github\asktaoAutoRecoverHp\asktaoAutoRecoverHp\Resources\dm_soft.txt"
+    Property dictName = "dm_soft.dmd"
 
     Property hwnd
+
+    Private cfgFName = "cfg.ini"
 
 
     Sub initBaskPath()
@@ -59,6 +59,46 @@
 
     End Sub
 
+    Function writeIni(ByVal section, ByVal key, ByVal value)
+
+        Return dm.WriteIni(section, key, value, cfgFName)
+
+
+
+    End Function
+
+    Function readFile(ByVal f)
+
+        Return dm.ReadFile(f)
+
+
+    End Function
+
+    Function writeFile(ByVal f, ByVal content)
+
+        Return dm.WriteFile(f, content)
+
+    End Function
+
+    Function writeFileCover(ByVal f, ByVal content)
+
+        If dm.IsFileExist(f) = 1 Then
+
+            dm.DeleteFile(f)
+
+        End If
+
+
+        Return dm.WriteFile(f, content)
+
+    End Function
+
+
+    Function readIni(ByVal section, ByVal key)
+
+        Return dm.ReadIni(section, key, cfgFName)
+
+    End Function
 
     Sub askTaoBindW()
 
@@ -75,7 +115,7 @@
 
         bindAction.Invoke(dm, hwnd)
 
-        basePath = dm.GetBasePath()
+        'basePath = dm.GetBasePath()
 
         ' dm_ret = dm.SetPath(basePath)
 

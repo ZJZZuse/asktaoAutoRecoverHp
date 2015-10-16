@@ -145,8 +145,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="MyAskTaoBase.vb" />
+    <Compile Include="MyCommonToolsZ.vb" />
     <Compile Include="MyDm.vb" />
     <Compile Include="MyGameBaseHelper.vb" />
+    <Compile Include="MySimpleLoger.vb" />
     <Compile Include="SysRleHelper.vb" />
   </ItemGroup>
   <ItemGroup>

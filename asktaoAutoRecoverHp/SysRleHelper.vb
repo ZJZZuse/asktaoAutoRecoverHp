@@ -1,27 +1,29 @@
-﻿Public Class SysRleHelper
+﻿Imports System.IO
 
-    Shared dllPaths = {"", ""}
+Public Class SysRleHelper
+
+    Shared dllPaths = {"dm.dll", "BSSOFT.DLL"}
+
+
 
     Shared Sub regeditDll()
 
         Dim ws = CreateObject("Wscript.Shell")
 
-        Dim p = Application.StartupPath
+        Dim p = Application.StartupPath + "\"
 
-        MsgBox(p)
+        ' MsgBox(p)
 
 
-        'For Each path In dllPaths
+        For Each path In dllPaths
 
-        '    ws.run("regsvr32 " + path + " /s")
+            ws.run("regsvr32 " + p + path + " /s")
 
-        'Next
+        Next
 
 
 
     End Sub
-
-
 
 
 End Class
