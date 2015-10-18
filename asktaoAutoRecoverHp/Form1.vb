@@ -30,7 +30,7 @@
         InitializeComponent()
 
 
-        MySimpleLoger.log("t")
+        ' MySimpleLoger.log("t")
 
         initDateMe()
 
@@ -47,7 +47,7 @@
 
 
         '注册dll
-        'SysRleHelper.regeditDll()
+        SysRleHelper.regeditDllByCondition()
 
 
         ' MsgBox(Application.UserAppDataPath)
@@ -62,7 +62,7 @@
         Me.FormBorderStyle = FormBorderStyle.FixedSingle
 
         '调试的时候注释
-        ' DmGuard.initAndGoGuard()
+        DmGuard.initAndGoGuard()
 
 
     End Sub
@@ -204,7 +204,7 @@
     'End Sub
 
     Private Sub NumericUpDownsmhp_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NumericUpDownsmhp.ValueChanged
-
+        initTimeer(sender)
     End Sub
 
     Private Sub CheckBoxEnableSimpleHpMp_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBoxEnableSimpleHpMp.CheckedChanged
@@ -411,7 +411,7 @@
     End Sub
 
     Private Sub NumericUpDownAutoSendS_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NumericUpDownAutoSendS.ValueChanged
-
+        TimerAutoSendS.Interval = NumericUpDownAutoSendS.Value * 1000
     End Sub
 
     Private Sub TimerAutoSendS_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TimerAutoSendS.Tick
@@ -439,7 +439,13 @@
 
     Private Sub TextBoxAutoTalk_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles TextBoxAutoTalk.LostFocus
 
-        sForSends = TextBoxAutoTalk.Text.Split(vbCrLf)
+        Try
+            sForSends = TextBoxAutoTalk.Text.Split(vbCrLf)
+        Catch ex As Exception
+            ReDim sForSends(1)
+            sForSends(0) = TextBoxAutoTalk.Text
+        End Try
+
 
         myDm.writeFileCover("TextBoxAutoTalk_text", TextBoxAutoTalk.Text)
 

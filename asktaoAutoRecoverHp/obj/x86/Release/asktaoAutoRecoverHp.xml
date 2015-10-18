@@ -6,20 +6,17 @@ asktaoAutoRecoverHp
 </name>
 </assembly>
 <members>
-<member name="M:asktaoAutoRecoverHp.DmGuard.initAndGoGuard">
-	<summary>
- common usage
- </summary>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:asktaoAutoRecoverHp.MyGameBaseHelper.generateCommonInterval">
-	<summary>
-	</summary>
-	<returns>ms</returns>
-	<remarks></remarks>
-</member><member name="M:asktaoAutoRecoverHp.AutoFightManager.autoFightF">
+<member name="M:asktaoAutoRecoverHp.AutoFightManager.autoFightF">
  隔个10s运行一次即可
 
+</member><member name="M:asktaoAutoRecoverHp.MyDm.#ctor(Dm.dmsoft,System.Int32,asktaoAutoRecoverHp.MyDm.bindAction)">
+	<summary>
+ common one time builder
+ </summary>
+	<param name="dm"></param>
+	<param name="hwnd"></param>
+	<param name="bindAction"></param>
+	<remarks></remarks>
 </member><member name="M:asktaoAutoRecoverHp.MyAskTaoBase.recoverPetRoleHMPAutoFacede(System.Object,System.Object,System.Object,System.Object)">
 	<summary>
  that's take effect in unfighting condition.
@@ -38,6 +35,12 @@ asktaoAutoRecoverHp
 </member><member name="M:asktaoAutoRecoverHp.MyAskTaoBase.gainPetMp">
 	<summary>
  to do
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:asktaoAutoRecoverHp.DmGuard.initAndGoGuard">
+	<summary>
+ common usage
  </summary>
 	<returns></returns>
 	<remarks></remarks>
@@ -81,13 +84,10 @@ asktaoAutoRecoverHp
 	<summary>
   一个强类型的资源类，用于查找本地化的字符串等。
 </summary>
-</member><member name="M:asktaoAutoRecoverHp.MyDm.#ctor(Dm.dmsoft,System.Int32,asktaoAutoRecoverHp.MyDm.bindAction)">
+</member><member name="M:asktaoAutoRecoverHp.MyGameBaseHelper.generateCommonInterval">
 	<summary>
- common one time builder
- </summary>
-	<param name="dm"></param>
-	<param name="hwnd"></param>
-	<param name="bindAction"></param>
+	</summary>
+	<returns>ms</returns>
 	<remarks></remarks>
 </member>
 </members>
